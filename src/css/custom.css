@@ -1,0 +1,13 @@
+h1, h2 {
+    font-family: 'Roboto', sans-serif;
+}
+
+.navbar {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    font-size: 1.25rem;
+}

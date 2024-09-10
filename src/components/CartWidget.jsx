@@ -1,23 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 const CartWidget = () => {
-    const cartItemCount = 3; // Número hardcodeado
-
     return (
-        <div className="position-relative">
-            <img src="https://img.icons8.com/ios-glyphs/30/ffffff/shopping-cart.png" alt="Cart" className="img-fluid" />
-            <span
-                className="badge badge-danger position-absolute"
-                style={{
-                    top: '-10px',
-                    right: '-10px',
-                    borderRadius: '50%',
-                    padding: '5px 10px',
-                }}
-            >
-                {cartItemCount}
+        <Link to="/cart" className="btn btn-outline-light position-relative">
+            <FontAwesomeIcon icon={faShoppingCart} />
+            <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                3
             </span>
-        </div>
+        </Link>
     );
 };
 
