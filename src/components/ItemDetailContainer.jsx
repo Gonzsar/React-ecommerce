@@ -9,9 +9,9 @@ const ItemDetailContainer = () => {
         // Simulamos un async-mock con detalles del producto
         const fetchItemDetail = async () => {
             const items = [
-                { id: 1, name: 'Garrafa R22', category: 'Refrigeración', image: 'refrigeracion', description: 'Laptop de alto rendimiento.' },
-                { id: 2, name: 'Panel Led Redondo Ext.', category: 'Electricidad', image: 'electricidad', description: 'Camisa de algodón.' },
-                { id: 3, name: 'Loza Sanitaria', category: 'Sanitaria', image: 'sanitaria', description: 'Libro sobre sistemas sanitarios.' },
+                { id: 1, name: 'Garrafa R22', category: 'Refrigeración', image: 'refrigeracion', description: 'Gas refrigerante para aire acondicionado.' },
+                { id: 2, name: 'Panel Led Redondo Ext.', category: 'Electricidad', image: 'electricidad', description: 'Panel led para exteriores 12W.' },
+                { id: 3, name: 'Loza Sanitaria', category: 'Sanitaria', image: 'sanitaria', description: 'Loza de baño.' },
             ];
 
             const foundItem = items.find(item => item.id === parseInt(itemId));

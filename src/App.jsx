@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
     return (
-        <Router basename="/React-ecommerce">  {/* Configura el basename aquí */}
+        <Router basename="/React-ecommerce">  {/*configurar basement aca*/}
             <NavBar />
             <Routes>
                 <Route path="/" element={<ItemListContainer />} />
