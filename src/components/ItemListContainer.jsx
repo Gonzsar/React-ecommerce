@@ -1,18 +1,22 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import Item from './Item';
+
+// Importa las imágenes
+import refrigeracionImg from '../assets/img/refrigeracion.jpg';
+import electricidadImg from '../assets/img/electricidad.jpg';
+import sanitariaImg from '../assets/img/sanitaria.jpg';
 
 const ItemListContainer = ({ greeting }) => {
     const { categoryId } = useParams();
     const [items, setItems] = useState([]);
 
     useEffect(() => {
-        // simulamos un async-mock con productos filtrados por categoría
         const fetchItems = async () => {
             let products = [
-                { id: 1, name: 'Garrafa R22', category: 'Refrigeración', image: 'refrigeracion' },
-                { id: 2, name: 'Panel Led Redondo Ext.', category: 'Electricidad', image: 'electricidad' },
-                { id: 3, name: 'Loza Sanitaria', category: 'Sanitaria', image: 'sanitaria' },
+                { id: 1, name: 'Garrafa R22', category: 'Refrigeración', image: refrigeracionImg },
+                { id: 2, name: 'Panel Led Redondo Ext.', category: 'Electricidad', image: electricidadImg },
+                { id: 3, name: 'Loza Sanitaria', category: 'Sanitaria', image: sanitariaImg },
             ];
 
             if (categoryId) {

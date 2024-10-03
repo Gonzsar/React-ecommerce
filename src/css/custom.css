@@ -11,3 +11,17 @@ h1, h2 {
     border: none;
     font-size: 1.25rem;
 }
+
+.banner img {
+    height: auto;
+    object-fit: cover;
+}
+
+.carousel-inner img {
+    height: 500px;
+    object-fit: contain;
+}
+
+.footer {
+    background-color: #ebe6e1;
+}

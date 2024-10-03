@@ -10,7 +10,7 @@ const NavBar = () => {
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark py-3">
             <div className="container">
                 <Link to="/" className="navbar-brand">
-                    <h2 className="text-light">Mi Ferretería</h2>
+                    <h2 className="text-light">Frío Polar</h2>
                 </Link>
                 <button
                     className="navbar-toggler"
