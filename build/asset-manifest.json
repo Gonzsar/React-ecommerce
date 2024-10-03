@@ -1,13 +1,24 @@
 {
   "files": {
-    "main.css": "/React-ecommerce/static/css/main.51582135.css",
-    "main.js": "/React-ecommerce/static/js/main.3646ee6e.js",
+    "main.css": "/React-ecommerce/static/css/main.1f12a450.css",
+    "main.js": "/React-ecommerce/static/js/main.cdae8c27.js",
+    "static/media/alcancedetumano.png": "/React-ecommerce/static/media/alcancedetumano.1caaede6342f83d82a29.png",
+    "static/media/descuentosherramientas.png": "/React-ecommerce/static/media/descuentosherramientas.0135b09866c5c81f8099.png",
+    "static/media/remodelacion.png": "/React-ecommerce/static/media/remodelacion.fd6f298abde540bacb54.png",
+    "static/media/nuevamarca.png": "/React-ecommerce/static/media/nuevamarca.a1d1d84ded28b65ab6fa.png",
+    "static/media/carpinteria.png": "/React-ecommerce/static/media/carpinteria.a9d98103d1a9bae0e307.png",
+    "static/media/banner.png": "/React-ecommerce/static/media/banner.664fd249ff6bfa0664c2.png",
+    "static/media/electricidad.jpg": "/React-ecommerce/static/media/electricidad.3467513ef27ea09a3c02.jpg",
+    "static/media/bootstrap-icons.woff?": "/React-ecommerce/static/media/bootstrap-icons.39795c0b4513de014cf8.woff",
+    "static/media/refrigeracion.jpg": "/React-ecommerce/static/media/refrigeracion.4423ac02756500506ec2.jpg",
+    "static/media/bootstrap-icons.woff2?": "/React-ecommerce/static/media/bootstrap-icons.b7bcc075b395c14ce8c2.woff2",
+    "static/media/sanitaria.jpg": "/React-ecommerce/static/media/sanitaria.91aae66847ffdf9f178f.jpg",
     "index.html": "/React-ecommerce/index.html",
-    "main.51582135.css.map": "/React-ecommerce/static/css/main.51582135.css.map",
-    "main.3646ee6e.js.map": "/React-ecommerce/static/js/main.3646ee6e.js.map"
+    "main.1f12a450.css.map": "/React-ecommerce/static/css/main.1f12a450.css.map",
+    "main.cdae8c27.js.map": "/React-ecommerce/static/js/main.cdae8c27.js.map"
   },
   "entrypoints": [
-    "static/css/main.51582135.css",
-    "static/js/main.3646ee6e.js"
+    "static/css/main.1f12a450.css",
+    "static/js/main.cdae8c27.js"
   ]
 }
