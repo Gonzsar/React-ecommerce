@@ -16,9 +16,9 @@ const ItemDetailContainer = () => {
     useEffect(() => {
         const fetchItemDetail = async () => {
             const items = [
-                { id: 1, name: 'Garrafa R22', category: 'Refrigeración', image: refrigeracionImg, description: 'Gas refrigerante para aire acondicionado.', stock: true, featured: true },
-                { id: 2, name: 'Panel Led Redondo Ext.', category: 'Electricidad', image: electricidadImg, description: 'Panel led para exteriores 12W.', stock: true, featured: false },
-                { id: 3, name: 'Loza Sanitaria', category: 'Sanitaria', image: sanitariaImg, description: 'Loza de baño.', stock: false, featured: false },
+                { id: 1, name: 'Garrafa R22', category: 'Refrigeración', price: '5860', image: refrigeracionImg, description: 'Gas refrigerante para aire acondicionado.', stock: true, featured: true },
+                { id: 2, name: 'Panel Led Redondo Ext.', category: 'Electricidad', price: '520', image: electricidadImg, description: 'Panel led para exteriores 12W.', stock: true, featured: false },
+                { id: 3, name: 'Loza Sanitaria', category: 'Sanitaria', price: '790', image: sanitariaImg, description: 'Loza de baño.', stock: false, featured: false },
             ];
 
             const foundItem = items.find(item => item.id === parseInt(itemId));

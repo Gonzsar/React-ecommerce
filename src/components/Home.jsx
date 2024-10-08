@@ -116,7 +116,7 @@ const Home = () => {
                 </Slider>
 
                 <h2 className="text-center mb-4 bg-secondary text-white rounded-pill">Nuestros Productos</h2>
-                <Slider {...settings}>
+                <Slider {...settings} className='mb-5'>
                     {/* Nuevos ingresos */}
                     <div className="card">
                         <img src="/assets/img/producto3.jpg" className="card-img-top" alt="Producto 3" />
@@ -134,19 +134,6 @@ const Home = () => {
                     </div>
                 </Slider>
             </div>
-
-            {/* Footer con logo y botones de contacto */}
-            <footer className="text-center mt-5 py-4 bg-light">
-                <img src="/assets/img/banner.jpg" alt="Logo" className="mb-3" style={{ width: '150px' }} />
-                <div>
-                    <a href="https://wa.me/094086431" className="btn btn-success mx-2">
-                        <i className="bi bi-whatsapp"></i> WhatsApp
-                    </a>
-                    <a href="mailto:contacto@miempresa.com" className="btn btn-info mx-2">
-                        <i className="bi bi-envelope"></i> Email
-                    </a>
-                </div>
-            </footer>
         </div>
     );
 };
