@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { CartContext } from './context/CartContext';
+import { CartContext } from '../context/CartContext';
 
 // Importa las imágenes
 import refrigeracionImg from '../assets/img/refrigeracion.jpg';

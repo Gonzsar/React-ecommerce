@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { CartContext } from './context/CartContext';
+import { CartContext } from '../context/CartContext';
 import { Link } from 'react-router-dom';
 
 const CartWidget = () => {
@@ -8,7 +8,7 @@ const CartWidget = () => {
 
     return (
         <Link to="/cart" className="btn btn-outline-primary position-relative">
-            <i className="bi bi-cart"></i>
+            <i className="bi bi-cart"> Mi compra</i>
             {totalItems > 0 && (
                 <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                     {totalItems}

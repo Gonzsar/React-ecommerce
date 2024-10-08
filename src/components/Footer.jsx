@@ -25,7 +25,7 @@ const Footer = () => {
                                 <FaClock className="me-2" /> Lunes a Viernes: 9:00 AM - 5:00 PM
                             </li>
                             <li className="mb-2">
-                                <FaPhone className="me-2" /> Teléfono: 2292 5796 / 094 086 431
+                                <FaPhone className="me-2" /> Teléfono: 2292 5796 / 094 086 710
                             </li>
                             <li className="mb-2">
                                 <FaMapMarkerAlt className="me-2" /> Dirección: Don Luciano Larrañaga, entre Piedras y Manuel Oribe, Pando, Canelones.
