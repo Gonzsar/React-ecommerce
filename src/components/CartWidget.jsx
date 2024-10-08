@@ -1,16 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { CartContext } from './context/CartContext';
 import { Link } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 const CartWidget = () => {
+    const { cartItems } = useContext(CartContext);
+    const totalItems = cartItems.reduce((acc, item) => acc + item.quantity, 0);
+
     return (
-        <Link to="/cart" className="btn btn-outline-light position-relative">
-            <FontAwesomeIcon icon={faShoppingCart} />
-            <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                3
-            </span>
+        <Link to="/cart" className="btn btn-outline-primary position-relative">
+            <i className="bi bi-cart"></i>
+            {totalItems > 0 && (
+                <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    {totalItems}
+                </span>
+            )}
         </Link>
     );
 };

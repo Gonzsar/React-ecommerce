@@ -2,13 +2,27 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import bannerImage from '../assets/img/banner.png';
-import carousel1 from '../assets/img/descuentosherramientas.png'
-import carousel2 from '../assets/img/alcancedetumano.png'
-import carousel3 from '../assets/img/nuevamarca.png'
-import carousel4 from '../assets/img/carpinteria.png'
-import carousel5 from '../assets/img/remodelacion.png'
+import carousel1 from '../assets/img/descuentosherramientas.png';
+import carousel2 from '../assets/img/alcancedetumano.png';
+import carousel3 from '../assets/img/nuevamarca.png';
+import carousel4 from '../assets/img/carpinteria.png';
+import carousel5 from '../assets/img/remodelacion.png';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 const Home = () => {
+    // Configuración de React Slick
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 3,  // Mostrar solo un producto a la vez
+        slidesToScroll: 1,
+        arrows: true,  // Mostrar flechas de navegación
+        autoplay: false  // El deslizamiento automático está desactivado
+    };
+
     return (
         <div>
             {/* Banner */}
@@ -54,33 +68,71 @@ const Home = () => {
 
             {/* Secciones de productos */}
             <div className="container">
-                <h2 className="text-center mb-4">Más Vendidos</h2>
-                <div className="row">
+            <h2 className="text-center mb-4 bg-secondary text-white rounded-pill">Más Vendidos</h2>
+                <Slider {...settings} className='mb-5' >
                     {/* Productos más vendidos */}
-                    <div className="col-md-4">
-                        <div className="card">
-                            <img src="/assets/img/producto1.jpg" className="card-img-top" alt="Producto 1" />
-                            <div className="card-body">
-                                <h5 className="card-title">Producto 1</h5>
-                                <Link to="/item/1" className="btn btn-primary">Ver Detalles</Link>
-                            </div>
+                    <div className="card">
+                        <img src="/assets/img/producto1.jpg" className="card-img-top" alt="Producto 1" />
+                        <div className="card-body">
+                            <h5 className="card-title">Producto 1</h5>
+                            <Link to="/item/1" className="btn btn-primary">Ver Detalles</Link>
                         </div>
                     </div>
-                </div>
+                    <div className="card">
+                        <img src="/assets/img/producto2.jpg" className="card-img-top" alt="Producto 2" />
+                        <div className="card-body">
+                            <h5 className="card-title">Producto 2</h5>
+                            <Link to="/item/2" className="btn btn-primary">Ver Detalles</Link>
+                        </div>
+                    </div>
+                    <div className="card">
+                        <img src="/assets/img/producto1.jpg" className="card-img-top" alt="Producto 3" />
+                        <div className="card-body">
+                            <h5 className="card-title">Producto 3</h5>
+                            <Link to="/item/3" className="btn btn-primary">Ver Detalles</Link>
+                        </div>
+                    </div>
+                    <div className="card">
+                        <img src="/assets/img/producto2.jpg" className="card-img-top" alt="Producto 4" />
+                        <div className="card-body">
+                            <h5 className="card-title">Producto 4</h5>
+                            <Link to="/item/4" className="btn btn-primary">Ver Detalles</Link>
+                        </div>
+                    </div>
+                    <div className="card">
+                        <img src="/assets/img/producto1.jpg" className="card-img-top" alt="Producto 5" />
+                        <div className="card-body">
+                            <h5 className="card-title">Producto 5</h5>
+                            <Link to="/item/5" className="btn btn-primary">Ver Detalles</Link>
+                        </div>
+                    </div>
+                    <div className="card">
+                        <img src="/assets/img/producto2.jpg" className="card-img-top" alt="Producto 6" />
+                        <div className="card-body">
+                            <h5 className="card-title">Producto 6</h5>
+                            <Link to="/item/6" className="btn btn-primary">Ver Detalles</Link>
+                        </div>
+                    </div>
+                </Slider>
 
-                <h2 className="text-center mb-4">Nuevos Ingresos</h2>
-                <div className="row">
+                <h2 className="text-center mb-4 bg-secondary text-white rounded-pill">Nuestros Productos</h2>
+                <Slider {...settings}>
                     {/* Nuevos ingresos */}
-                    <div className="col-md-4">
-                        <div className="card">
-                            <img src="/assets/img/producto2.jpg" className="card-img-top" alt="Producto 2" />
-                            <div className="card-body">
-                                <h5 className="card-title">Producto 2</h5>
-                                <Link to="/item/2" className="btn btn-primary">Ver Detalles</Link>
-                            </div>
+                    <div className="card">
+                        <img src="/assets/img/producto3.jpg" className="card-img-top" alt="Producto 3" />
+                        <div className="card-body">
+                            <h5 className="card-title">Producto 3</h5>
+                            <Link to="/item/3" className="btn btn-primary">Ver Detalles</Link>
                         </div>
                     </div>
-                </div>
+                    <div className="card">
+                        <img src="/assets/img/producto4.jpg" className="card-img-top" alt="Producto 4" />
+                        <div className="card-body">
+                            <h5 className="card-title">Producto 4</h5>
+                            <Link to="/item/4" className="btn btn-primary">Ver Detalles</Link>
+                        </div>
+                    </div>
+                </Slider>
             </div>
 
             {/* Footer con logo y botones de contacto */}

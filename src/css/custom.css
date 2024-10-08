@@ -21,3 +21,41 @@ h1, h2 {
     height: 500px;
     object-fit: contain;
 }
+
+/* Estilo para las flechas dentro de un botón circular */
+.slick-prev, .slick-next {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.slick-prev:hover, .slick-next:hover {
+    background-color: blue;
+}
+
+.slick-prev:before, .slick-next:before {
+    font-size: 20px;
+    color: white;
+}
+
+.slick-prev {
+    left: -50px; /* Ajuste de la posición izquierda */
+}
+
+.slick-next {
+    right: -50px; /* Ajuste de la posición derecha */
+}
+
+/* Separación entre productos */
+.slick-slide {
+    padding: 0 15px;
+}
+
+.card {
+    margin: 0 auto; /* Centra el producto */
+}
