@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import Swal from 'sweetalert2';  // Importar SweetAlert2
 import { CartContext } from '../context/CartContext';
 
 // Importa las imágenes
@@ -38,6 +39,18 @@ const ItemDetailContainer = () => {
         }
     };
 
+    const handleAddToCart = () => {
+        addItemToCart(item, quantity);
+
+        // Mostrar alerta SweetAlert2
+        Swal.fire({
+            title: 'Producto agregado',
+            text: `${item.name} se ha agregado al carrito.`,
+            icon: 'success',
+            confirmButtonText: 'Aceptar'
+        });
+    };
+
     if (!item) {
         return (
             <div className="d-flex justify-content-center my-5">
@@ -71,7 +84,7 @@ const ItemDetailContainer = () => {
                     </div>
 
                     {/* Botones */}
-                    <button className="btn btn-primary my-3" onClick={() => addItemToCart(item, quantity)}>Añadir al carrito</button>
+                    <button className="btn btn-primary my-3" onClick={handleAddToCart}>Añadir al carrito</button>
                     <Link to="/" className="btn btn-outline-secondary btn-lg">Volver al inicio</Link>
                 </div>
             </div>
