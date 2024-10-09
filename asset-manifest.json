@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/React-ecommerce/static/css/main.08a03a40.css",
-    "main.js": "/React-ecommerce/static/js/main.38bf0145.js",
+    "main.css": "/React-ecommerce/static/css/main.818f205e.css",
+    "main.js": "/React-ecommerce/static/js/main.1e1c2515.js",
     "static/media/alcancedetumano.png": "/React-ecommerce/static/media/alcancedetumano.1caaede6342f83d82a29.png",
     "static/media/descuentosherramientas.png": "/React-ecommerce/static/media/descuentosherramientas.0135b09866c5c81f8099.png",
     "static/media/remodelacion.png": "/React-ecommerce/static/media/remodelacion.fd6f298abde540bacb54.png",
@@ -18,11 +18,11 @@
     "static/media/slick.ttf": "/React-ecommerce/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/React-ecommerce/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/React-ecommerce/index.html",
-    "main.08a03a40.css.map": "/React-ecommerce/static/css/main.08a03a40.css.map",
-    "main.38bf0145.js.map": "/React-ecommerce/static/js/main.38bf0145.js.map"
+    "main.818f205e.css.map": "/React-ecommerce/static/css/main.818f205e.css.map",
+    "main.1e1c2515.js.map": "/React-ecommerce/static/js/main.1e1c2515.js.map"
   },
   "entrypoints": [
-    "static/css/main.08a03a40.css",
-    "static/js/main.38bf0145.js"
+    "static/css/main.818f205e.css",
+    "static/js/main.1e1c2515.js"
   ]
 }
