@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { CartContext } from '../context/CartContext';
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';  // Importar SweetAlert2
 
 const CheckoutPage = () => {
     const { cartItems } = useContext(CartContext);
@@ -9,7 +10,7 @@ const CheckoutPage = () => {
     // Formatear el mensaje de pedido para WhatsApp
     const formatWhatsAppMessage = () => {
         const itemsText = cartItems.map(item => (
-            `Producto: ${item.name}\nCantidad: ${item.quantity}\nPrecio unitario: $${item.price}\nTotal por este producto: $${(item.price * item.quantity).toFixed(2)}`
+            `Producto: ${item.title}\nCantidad: ${item.quantity}\nPrecio unitario: $${item.price}\nTotal por este producto: $${(item.price * item.quantity).toFixed(2)}`
         )).join('\n\n'); // Unir cada producto con doble salto de línea
 
         const totalText = `Total a pagar: $${totalPrice.toFixed(2)}`;
@@ -19,8 +20,21 @@ const CheckoutPage = () => {
 
     const handleWhatsAppOrder = () => {
         const message = formatWhatsAppMessage();
-        window.location.href = `https://wa.me/?text=${encodeURIComponent(message)}`;
+        const phoneNumber = "59894086710";
+        const url = `https://wa.me/${phoneNumber}/?text=${encodeURIComponent(message)}`;
+    
+        // Mostrar un mensaje explicativo al usuario
+        Swal.fire({
+            title: 'Abriendo WhatsApp...',
+            text: 'Por favor, confirma el envío en el chat de WhatsApp',
+            icon: 'info',
+            confirmButtonText: 'Ok'
+        }).then(() => {
+            window.open(url, "_blank");
+        });
     };
+    
+    
 
     return (
         <div className="container my-5">
@@ -29,7 +43,7 @@ const CheckoutPage = () => {
                 {cartItems.map(item => (
                     <li key={item.id} className="list-group-item d-flex justify-content-between align-items-center">
                         <div>
-                            <h5>{item.name}</h5>
+                            <h5>{item.title}</h5>
                             <p>Cantidad: {item.quantity} | Precio: ${item.price}</p>
                         </div>
                         <span>Total: ${(item.price * item.quantity).toFixed(2)}</span>

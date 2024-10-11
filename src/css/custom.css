@@ -56,6 +56,34 @@ h1, h2 {
     padding: 0 15px;
 }
 
+.card img {
+    width: 100%; 
+    height: 200px; /* Puedes ajustar esta altura según lo necesites */
+    object-fit: contain; /* Esto se asegurará de que las imágenes mantengan su proporción y no se deformen */
+}
+
 .card {
-    margin: 0 auto; /* Centra el producto */
+    height: 100%; /* Asegura que todas las tarjetas tengan el mismo tamaño */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+/* En tu archivo CSS global, como custom.css */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+footer {
+    margin-top: auto;  /* Empuja el footer al final */
 }

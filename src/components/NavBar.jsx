@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import CartWidget from './CartWidget';
 import { AuthContext } from '../context/AuthContext';
@@ -52,6 +52,7 @@ const NavBar = () => {
                             <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                                 {categories.map((category) => (
                                     <li key={category}>
+                                        {/* Link para redirigir a la ruta de categoría */}
                                         <Link to={`/category/${category}`} className="dropdown-item">
                                             {category}
                                         </Link>

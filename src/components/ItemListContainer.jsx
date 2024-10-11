@@ -1,48 +1,60 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import Item from './Item';
+import { getDocs, collection } from "firebase/firestore";
+import { db } from '../firebase/firebase';
+import Item from './Item'; // Importa tu componente de item
 
-// Importa las imágenes
-import refrigeracionImg from '../assets/img/refrigeracion.jpg';
-import electricidadImg from '../assets/img/electricidad.jpg';
-import sanitariaImg from '../assets/img/sanitaria.jpg';
-
-const ItemListContainer = ({ greeting }) => {
-    const { categoryId } = useParams();
-    const [items, setItems] = useState([]);
+const ItemListContainer = () => {
+    const { category } = useParams(); // Obtenemos la categoría desde la URL
+    const [products, setProducts] = useState([]);
+    const [loading, setLoading] = useState(true);  // Estado para manejar el cargando
 
     useEffect(() => {
-        const fetchItems = async () => {
-            let products = [
-                { id: 1, name: 'Garrafa R22', category: 'Refrigeración', image: refrigeracionImg },
-                { id: 2, name: 'Panel Led Redondo Ext.', category: 'Electricidad', image: electricidadImg },
-                { id: 3, name: 'Loza Sanitaria', category: 'Sanitaria', image: sanitariaImg },
-            ];
+        const fetchProducts = async () => {
+            try {
+                const productsCollection = await getDocs(collection(db, "products"));
+                const productsArray = productsCollection.docs.map(doc => ({ id: doc.id, ...doc.data() }));
 
-            if (categoryId) {
-                products = products.filter(item => item.category === categoryId);
+                // Filtrar productos por categoría
+                const filteredProducts = productsArray.filter(product => product.category === category);
+
+                setProducts(filteredProducts);
+            } catch (error) {
+                console.error("Error fetching products:", error);
+            } finally {
+                setLoading(false);  // Ya terminó la carga
             }
-
-            setItems(products);
+            console.log("Categoría seleccionada:", category);  // Verifica si llega la categoría correctamente
         };
 
-        fetchItems();
-    }, [categoryId]);
+        fetchProducts();
+    }, [category]);
+
+    if (loading) {
+        return (
+            <div className="d-flex justify-content-center my-5">
+                <div className="spinner-border" role="status">
+                    <span className="visually-hidden">Cargando...</span>
+                </div>
+            </div>
+        );
+    }
 
     return (
-        <div className="container my-5">
-            <div className="text-center">
-                <h1 className="display-4">{greeting}</h1>
-                <p className="lead">Explora nuestra amplia gama de productos para todas tus necesidades.</p>
-            </div>
-            <h2>{categoryId ? `Categoría: ${categoryId}` : 'Todos los Productos'}</h2>
+        <div className="container">
+            <h2>Productos en {category}</h2>
             <div className="row">
-                {items.map(item => (
-                    <Item key={item.id} item={item} />
-                ))}
+                {products.length > 0 ? (
+                    products.map(product => (
+                    <div key={product.id} className="col-md-4">
+                        <Item product={product} />
+                    </div>
+                    ))
+                    ) : (
+                        <p>No hay productos en esta categoría.</p>
+                )}
             </div>
         </div>
-    );
-};
-
+        );
+    };
 export default ItemListContainer;
